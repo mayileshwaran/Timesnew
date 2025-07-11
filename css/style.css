@@ -49,6 +49,11 @@ html, body {
 .text h1{
   color: var(--primary-color);
   font-size: 80px;
+   text-shadow:
+    0 0 5px #000,
+    0 0 10px #000,
+    0 0 15px #000,
+    0 0 20px #000;
 }.icon{
     display: flex;
     gap: 50px;
@@ -65,6 +70,7 @@ nav{
   padding: 20px;
   display: flex;
   align-items: center;
+
   justify-content: space-around;
 }
 nav ul a{
@@ -81,14 +87,7 @@ nav ul{
   color: var(--text-white);
   gap: 50px;
 }
-.banner img{
-  width: 200px;
-}
-.water{
-  position: absolute;
-  right: 20%;
-  width: 200px;
-}
+
 .banner .text{
     width: 40%;
     cursor: pointer;
@@ -156,14 +155,14 @@ transition-duration: 0.7s;
       justify-content: center;
       align-self: center;
     }
-
+    
     .tab-content.active {
-      transition-duration: 0.7s;
       display: flex;
-   
+      
     }
     .tab-text {
-        display: flex;
+      display: flex;
+      transition-duration: 0.7s;
         width: 100%;
         align-items: center;
         justify-content: center;
@@ -177,24 +176,25 @@ transition-duration: 0.7s;
    
     .accordion-container  .set{
       width: 95%;
-       
     }
-  .accordion-container {
+    .accordion-container {
       height: auto;
       display: flex;
       flex-direction: column;
       width: 100%;
-       gap: 30px;
-        padding: 20px;
-        align-items: center;
-        justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      
     }
-
-  .accordion-container .set .set-heading {
+    
+    .accordion-container .set .set-heading {
       padding: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      
       gap: 20px;
   background-color: var(--light-blue-bg);
   color: var(--text-black);
@@ -223,7 +223,7 @@ transition-duration: 0.7s;
   display: block;
   align-items: center;
   justify-content: center;
-  
+  padding-bottom: 50px;
   width: 90%;
 }
 .carousel-inner{
@@ -236,14 +236,15 @@ transition-duration: 0.7s;
 
 }
 .carousel-item{
-  height:500px;
+  height: 500px;
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: center;
-     align-self: center;
+     
     position: absolute;
     opacity:0;
+    top: 50%;
     width: 100%;
     transition-duration: 1s;
       background-image: url(../image/carousel.png);
@@ -333,7 +334,7 @@ h4{
 }
 .left-form{
   width: 50%;
-  height: 500px;
+  height: 540px;
 }
 .left-form form{  
   display: flex;
@@ -342,18 +343,19 @@ h4{
   justify-content: center;
   gap:40px;
   width: 80%;
-    padding: 47px;
+  height: 100%;
+    padding: 49px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 form input{
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid black;
   width: 90%;
 }
 form textarea{
  
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   width: 90%;
   height:60px;
@@ -364,14 +366,13 @@ form textarea{
   display: flex;
   flex-direction: column;
  justify-content: space-between;
-  height: 500px;
+  height: 540px;
 }
 .form-content{
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  padding: 20px 50px 20px 50px;
+  padding: 20px 50px 20px 50px; 
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) ;
 }
 .form-content2{
@@ -380,7 +381,7 @@ form textarea{
   gap: 15px;
   text-align: start;
   padding: 0px 20px 10px 20px;
-  font-size: 12px;
+  font-size: 10px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .rf{
@@ -416,13 +417,16 @@ footer{
   width: 20%;
   padding: 10px 20px 10px 20px;
 }
+.copy{
+  padding: 10px 20px 10px 20px;
+}
 .foot-1{
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 .foot-1 p{
-  font-size: 12px;
+  font-size: 16px;
   text-align: start;
   color: var(--text-white);
 }
@@ -582,16 +586,18 @@ margin-bottom: 0px;
 
 .brands {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  padding: 20px;
+  justify-content: space-between;
+
 }
 
 .brand {
   text-align: center;
   background-color: #b3b7ff;
    width: 70px;
-   margin-bottom: 10px;
+   padding-bottom:10px ;
 }
 
 .brand img {
@@ -622,20 +628,40 @@ margin-bottom: 0px;
 .pri-but:hover {
   background-color: #000000;
 }
+.countdown{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0px;
+  align-items: center;
+  margin-bottom: 0px;
+  
+}
+.countdown h1{
+  color: white;
+  font-size: 50px;
+}
 .countdown-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin: 40px 0;
-  height: 400px;
+  flex-direction: column;
   background-image: url(../image/timer\ \(1\).png);
+  background-size: cover;
   background-color: rgba(0,0, 0,0.5);
   backdrop-filter: overlay;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  margin: 40px 0;
+  height: 400px;
   background-position: center;
   flex-wrap: wrap;
- 
-  
+}
+.timess{
+  display:flex;
+  gap: 20px;
 }
 
 .time-box {
@@ -690,12 +716,12 @@ margin-bottom: 0px;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 500px;
+      height: 400px;
     }
     .times {
       background: var(--text-white);
        height: 400px;
-      width: 90%;
+      width: 95%;
       background-image: url(../image/container.jpg);
       background-position: center;
       background-color: rgba(0,0, 0,0.5);
@@ -782,12 +808,14 @@ nav .icon i {
         justify-content: space-between;
          width: 100%;
          /* gap: 20%; */
+         position: relative;
+         z-index: 4;
          padding: 20px 50px; 
-         
       }
     footer{
     flex-direction: column;
     padding: 20px;
+    gap: 20px;
   }
   .foot-1,.foot-2,.foot-3,.foot-4{
     width: 100%;
@@ -805,17 +833,17 @@ nav .icon i {
         align-items: start;
         top: -250px;
         left: 10%;
-        z-index: 4;
         padding: 20px;
+        z-index: 2;
     }
    #nav:checked~ul{
         top: 60px;
        left: 10%;
        padding:px;
+
        }
   
 .text h1{
-  color: var(--primary-color);
   font-size: 50px;
 }
 .text h2{
@@ -853,6 +881,8 @@ nav img{
   }
   .left-form{
     width: 100%;
+        padding: 20px;
+
   }
   .right-form{
     width: 100%;
@@ -861,19 +891,18 @@ nav img{
   .right-form p{
     color: black;
   }
+  .left-form {
+    width: 100%;
+     padding: 0px
+  }
+  .form{
+    padding: 20px;
+    }
   .left-form form{
     width: 100%;
-    left: 5%;
   }
-  .carousel-inner{
-    height: 450px;
-  }
-  .carousel-item{
-    height: 450px;
-  }
-  .carousel-container{
-    height: 450px;
-  }
+ 
+  
  .carousel-prev-indicator{
   font-size: 20px;
   left: 5%;
@@ -895,12 +924,18 @@ nav img{
  .conc-banner h2{
  font-size: 30px;
  }
+ .right-form{
+    width: 100%;
+    height: 550px;
+  }
 }
 
 @media only screen and (max-width:700px) {
 .tab-content{
   width: 100%;
 }
+
+
   .tab-content h2{
  font-size: 15px;
   }
@@ -910,12 +945,18 @@ nav img{
   .tab-text{
     width: 90%;
     gap: 20px;
+    flex-wrap: wrap;
   }
+
   .tab-text p{
     font-size: 10px;
-    
-  }
-  
+     }
+     .conc-banner{
+      height: 250px;
+     }
+  .conc-banner p{
+  width: 80%;
+}
   .carousel-item{
     flex-direction: column;
     
@@ -945,10 +986,11 @@ nav img{
 }
 
 .times{
-  padding: 20px
+  background-position: left;
 }
 .our-story{
   flex-direction: column;
+  padding: 20px;
 }
 .our-s{
    width: 100%;
@@ -979,10 +1021,13 @@ nav img{
     right:10% ;
   }
   .countdown-container{
-    gap: 5px;
+    gap: 50px;
     height: 200px;
     margin: 0px;
     margin-bottom: 20px;
+  }
+  .timess{
+    gap: 5px;
   }
   .time-box{
     height: 75px;
@@ -996,6 +1041,9 @@ nav img{
   .time-box span{
     font-size: 10px;
   }
+  .countdown h1{
+  font-size: 40px;
+}
   .banner .text{
     width: 80%;
     align-items: center;
@@ -1003,10 +1051,7 @@ nav img{
   .conc-banner h2{
   font-size: 20px;
 }
-.conc-banner p{
-  width: 70%;
 
-}
 .rf p{
   font-size: 12px;
   color: black;

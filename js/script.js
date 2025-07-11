@@ -13,7 +13,7 @@ $(document).ready(function(){
     $('.set-heading').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active')
-            $(this).siblings('.set-container').slideUp(500);
+            $(this).siblings('.set-container').slideUp(700);
             $('.set-heading span i').removeClass('fa-minus').addClass('fa-plus');
         }
         else {
@@ -23,11 +23,12 @@ $(document).ready(function(){
             $('.set-heading').removeClass('active');
             $(this).addClass('active');
 
-            $('.set-container').slideUp(300);
-            $(this).siblings('.set-container').slideDown(500)
+            $('.set-container').slideUp(700);
+            $(this).siblings('.set-container').slideDown(700)
         }
     })
 });
+ document.getElementById('year').textContent = new Date().getFullYear();
 $(document).ready(function(){
     let carouselItem=$('.carousel-item')
     carouselItem.first().addClass('active');
@@ -89,7 +90,7 @@ $(document).ready(function () {
                 $('#popup').fadeIn();
             });
             $('#confirm').click(function(){
-                alert('confirmed');
+                alert('Confirmed');
                 $('#popup').fadeOut();
             })
             $('#cancel').click(function(){
@@ -111,41 +112,40 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     const namePattern = /^[A-Za-z\s]+$/;
     const messagePattern = /^[A-Za-z0-9\s.,!?]+$/;
 
-    if (name === '' || email === '' || phone === '' || message === '') {
+    if (name === '') {
         formMessage.style.color = 'red';
-        formMessage.textContent = 'All fields are required.';
-        return;
-    }
-
-    if (!namePattern.test(name)) {
+        formMessage.textContent = 'Please enter your name.';
+    } else if (!namePattern.test(name)) {
         formMessage.style.color = 'red';
         formMessage.textContent = 'Name should only contain letters and spaces.';
-        return;
-    }
-
-    if (!emailPattern.test(email)) {
+    } else if (email === '') {
+        formMessage.style.color = 'red';
+        formMessage.textContent = 'Please enter your email.';
+    } else if (!emailPattern.test(email)) {
         formMessage.style.color = 'red';
         formMessage.textContent = 'Please enter a valid email address.';
-        return;
-    }
-
-    if (!phonePattern.test(phone)) {
+    } else if (phone === '') {
+        formMessage.style.color = 'red';
+        formMessage.textContent = 'Please enter your phone number.';
+    } else if (!phonePattern.test(phone)) {
         formMessage.style.color = 'red';
         formMessage.textContent = 'Phone number must start with 9, 8, 7, or 6 and be 10 digits.';
-        return;
-    }
-
-    if (!messagePattern.test(message)) {
+    } else if (message === '') {
+        formMessage.style.color = 'red';
+        formMessage.textContent = 'Please enter your message.';
+    } else if (!messagePattern.test(message)) {
         formMessage.style.color = 'red';
         formMessage.textContent = 'Message can only contain letters, numbers, spaces, and . , ! ?';
-        return;
+    } else {
+        // Valid case
+        setTimeout(() => {
+            formMessage.style.color = 'green';
+            formMessage.textContent = 'Form submitted successfully!';
+            document.getElementById('contactForm').reset();
+
+            setTimeout(() => {
+                formMessage.textContent = '';
+            }, 10000);
+        }, 1000);
     }
-
-    setTimeout(() => {
-        formMessage.style.color = 'green';
-        formMessage.textContent = 'Form submitted successfully!';
-        document.getElementById('contactForm').reset();
-
-        setTimeout(() => {formMessage.textContent = '' }, 10000)});
 });
-

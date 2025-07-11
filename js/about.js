@@ -1,3 +1,4 @@
+ document.getElementById('year').textContent = new Date().getFullYear();
 function updateTime() {
   const now = new Date();
 
