@@ -58,9 +58,7 @@ $(document).ready(function(){
 
 })
 $(document).ready(function () {
-  // Set future date: 70 days 12h 35m 60s from now
-  const now = new Date();
-  const future = new Date(now.getTime() + (5 * 24 * 60 * 60 + 5 * 3600 + 35 * 60 + 60) * 1000);
+  const future = new Date("2025-08-31T23:59:59");
 
   function updateCountdown() {
     const currentTime = new Date().getTime();
