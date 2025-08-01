@@ -78,7 +78,8 @@ nav ul a{
   text-decoration: none;
 }
 nav li.active a{
-  color: black;
+   text-decoration-line: underline;
+   margin-bottom: 5px;
   font-weight: bold;
 }
 nav ul{
@@ -500,6 +501,9 @@ footer{
 
 .type img{
   width: auto;
+}
+.tab-text img{
+  object-fit: contain;
 }
   #popup{
             position: fixed;

@@ -13,7 +13,7 @@ $(document).ready(function(){
     $('.set-heading').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active')
-            $(this).siblings('.set-container').slideUp(700);
+            $(this).siblings('.set-container').slideUp(500);
             $('.set-heading span i').removeClass('fa-minus').addClass('fa-plus');
         }
         else {
@@ -23,8 +23,8 @@ $(document).ready(function(){
             $('.set-heading').removeClass('active');
             $(this).addClass('active');
 
-            $('.set-container').slideUp(700);
-            $(this).siblings('.set-container').slideDown(700)
+            $('.set-container').slideUp(500);
+            $(this).siblings('.set-container').slideDown(500)
         }
     })
 });
@@ -105,7 +105,7 @@ document.getElementById('submitBtn').addEventListener('click', function () {
     const message = document.getElementById('message').value.trim();
     const formMessage = document.getElementById('formMessage');
 
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    const emailPattern =/^[a-zA-Z][^\s@]*@[^\s@]+\.[^\s@]+$/;
     const phonePattern = /^[6-9][0-9]{9}$/;
     const namePattern = /^[A-Za-z\s]+$/;
     const messagePattern = /^[A-Za-z0-9\s.,!?]+$/;
